@@ -388,7 +388,7 @@ background-color: var(--accent-color);
   height: 44px;
   background-color: #fff;
   border-radius: 50%;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1)
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .social-link:hover,
@@ -434,20 +434,24 @@ background-color: var(--accent-color);
   justify-content: center;
   align-items: center;
   border-radius: 4px;
-  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1)
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
   
-  .client-link:hover
+  .client-link:hover,
   .client-link:focus {
     border: 1px solid var(--accent-color);
+    
    }
 
   .client-icon {
     fill: #AFB1B8;
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1)
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
   }
-  .client-link:hover .client-icon {
-  fill: var(--accent-color);
+
+  .client-link:hover .client-icon,
+  .client-link:focus .client-icon {
+    fill: var(--accent-color);
   }
 
 /* footer */
@@ -614,4 +618,54 @@ background-color: var(--accent-color);
     letter-spacing: 3%;
     }
 
-  
+  /* modal window */
+
+  .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    transition: opacity 200ms linear, visibility 200ms linear;
+
+  }
+
+  .backdrop.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    height: 100%;
+  }
+
+  .modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 528px;
+    height: 581px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(0, 0, 0, 0.14), 0 1px 3px rgba(0, 0, 0, 0.12);
+    background-color: var(--white-text-color);
+    
+  }
+
+   .close-btn {
+    display: flex;
+    position: absolute;
+    padding: 0;
+    top: 8px;
+    right: 8px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: transparent;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    
+  }
